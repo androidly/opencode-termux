@@ -14,7 +14,7 @@ Recommended for most clean Termux test machines.
 apt install -y glibc-repo
 apt update
 apt install -y glibc openssl-glibc
-apt install -y /path/to/opencode_<version>_aarch64.deb
+dpkg -i /path/to/opencode_<version>_aarch64.deb
 ```
 
 Optional fallback tooling:
