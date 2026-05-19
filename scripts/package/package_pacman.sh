@@ -38,6 +38,6 @@ cp "$ROOT_DIR/packaging/pacman/PKGBUILD" "$TMP_PKGBUILD"
 sed -i "s/^pkgver=.*/pkgver=$VERSION/" "$TMP_PKGBUILD"
 sed -i "s/^pkgrel=.*/pkgrel=$PKGREL/" "$TMP_PKGBUILD"
 
-STAGED_PREFIX="$STAGED_PREFIX" REPO_ROOT="$ROOT_DIR" makepkg --config "$TMP_MAKEPKG_CONF" -f --noconfirm -p "$TMP_PKGBUILD"
+STAGED_PREFIX="$STAGED_PREFIX" REPO_ROOT="$ROOT_DIR" makepkg --config "$TMP_MAKEPKG_CONF" -f --noconfirm --nodeps --skipinteg -p "$TMP_PKGBUILD"
 
 echo "Pacman package created under: $ROOT_DIR/packaging/pacman"

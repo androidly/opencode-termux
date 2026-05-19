@@ -1,5 +1,7 @@
 # opencode-termux (OCT)
 
+**[中文](README_CN.md)** | English
+
 Termux-focused packaging and runtime workflow for OpenCode.
 
 ## Install first
