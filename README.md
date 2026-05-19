@@ -2,6 +2,21 @@
 
 **[中文](README_CN.md)** | English
 
+<p align="center">
+  <a href="https://github.com/androidly/opencode-termux/releases">
+    <img src="https://img.shields.io/github/v/release/androidly/opencode-termux?include_prereleases&label=release&logo=github" alt="Release"/>
+  </a>
+  <a href="https://github.com/androidly/opencode-termux/releases">
+    <img src="https://img.shields.io/github/downloads/androidly/opencode-termux/total?logo=github" alt="Downloads"/>
+  </a>
+  <img src="https://img.shields.io/badge/arch-aarch64-blue?logo=arm&logoColor=white" alt="Architecture"/>
+  <img src="https://img.shields.io/badge/platform-Android_Termux-3DDC84?logo=android&logoColor=white" alt="Platform"/>
+  <img src="https://img.shields.io/badge/license-MIT-yellow.svg" alt="License"/>
+  <a href="https://github.com/anomalyco/opencode">
+    <img src="https://img.shields.io/badge/upstream-opencode-6E4BEC?logo=visualstudiocode&logoColor=white" alt="Upstream"/>
+  </a>
+</p>
+
 Termux-focused packaging and runtime workflow for OpenCode.
 
 ## Install first
