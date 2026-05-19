@@ -9,6 +9,13 @@ if [ "$ARCH" != "aarch64" ]; then
     exit 1
 fi
 
+CURRENT=$(opencode --version 2>/dev/null || echo "not-installed")
+
+echo "opencode-termux installer/updater"
+echo "================================="
+echo "Current version: ${CURRENT}"
+
+echo ""
 echo "[1/5] Updating package sources..."
 pkg update -y 2>/dev/null || apt update -y
 
@@ -35,14 +42,28 @@ if [ -z "$LATEST_TAG" ]; then
     exit 1
 fi
 
-VERSION="${LATEST_TAG#v}"
-DEB_NAME="opencode_${VERSION}_aarch64.deb"
+LATEST="${LATEST_TAG#v}"
+
+echo "Latest version:  $LATEST"
+
+if [ "$CURRENT" = "$LATEST" ]; then
+    echo ""
+    echo "Already up to date."
+    exit 0
+fi
+
+if [ "$CURRENT" = "not-installed" ]; then
+    echo ""
+    echo "opencode not found, performing fresh install..."
+else
+    echo ""
+    echo "Upgrading $CURRENT -> $LATEST ..."
+fi
+
+echo "[5/5] Downloading opencode_${LATEST}_aarch64.deb ..."
+DEB_NAME="opencode_${LATEST}_aarch64.deb"
 DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${LATEST_TAG}/${DEB_NAME}"
 
-echo "      Latest version: $VERSION"
-echo "      Download URL:   $DOWNLOAD_URL"
-
-echo "[5/5] Downloading and installing $DEB_NAME ..."
 TMPFILE=$(mktemp "${TMPDIR:-/data/data/com.termux/files/usr/tmp}/opencode.XXXXXX.deb")
 trap 'rm -f "$TMPFILE"' EXIT
 
@@ -50,5 +71,5 @@ wget -O "$TMPFILE" "$DOWNLOAD_URL"
 dpkg -i "$TMPFILE" || apt-get install -f -y
 
 echo ""
-echo "Installation complete."
+echo "Done."
 opencode --version
