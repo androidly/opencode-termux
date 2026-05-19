@@ -1,7 +1,3 @@
-# opencode-termux (OCT)
-
-**[中文](README_CN.md)** | English
-
 <p align="center">
   <a href="https://github.com/androidly/opencode-termux/releases">
     <img src="https://img.shields.io/github/v/release/androidly/opencode-termux?include_prereleases&label=release&logo=github" alt="Release"/>
@@ -16,6 +12,10 @@
     <img src="https://img.shields.io/badge/upstream-opencode-6E4BEC?logo=visualstudiocode&logoColor=white" alt="Upstream"/>
   </a>
 </p>
+
+# opencode-termux (OCT)
+
+**[中文](README_CN.md)** | English
 
 Termux-focused packaging and runtime workflow for OpenCode.
 
