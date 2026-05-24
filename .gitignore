@@ -8,7 +8,11 @@ packages/
 # Large files (downloaded by CI)
 *.tar.gz
 *.zip
+.work/
+packing/
 packaging/dpkg/work/
+packaging/pacman/pkg/
+packaging/pacman/src/
 
 # Vendored third-party dependencies (auto-cloned)
 third-party/
