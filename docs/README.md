@@ -5,6 +5,7 @@ This directory is the single source of truth for the current Termux packaging/ru
 ## Start here
 
 - `execution-checklist.md` — install/test runbook (default Termux apt first, pacman path second)
+- `../tools/release-latest.sh` — 一键检查上游最新版并自动打包发布当前仓库 release
 - `skills-index.md` — concise index for prompts + quick fixes
 - `13-opencode-runtime-build.md` — canonical runtime build path (official `opencode-linux-arm64` + bun-termux-loader)
 - `20-packaging-deb.md` / `21-packaging-pkg-tar-xz.md` — package layout and build outputs

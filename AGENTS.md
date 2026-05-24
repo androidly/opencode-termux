@@ -24,6 +24,7 @@ opencode-termux/
 |---|---|---|
 | Build orchestration | `Makefile`, `tools/make-opencode` | `make` is source of truth; wrapper maps CLI flags to make vars |
 | Prepare runtime artifact | `tools/produce-local.sh` | resolves version, wraps runtime, cleans stale generated dirs |
+| Release latest upstream version | `tools/release-latest.sh` | compares upstream/current release tags, builds packages, uploads GitHub release |
 | Stage install tree | `scripts/build.sh`, `scripts/common.sh` | writes staged prefix + build metadata |
 | Build DEB package | `scripts/package/package_deb.sh`, `packaging/deb/DEBIAN/control` | postinst hook calls system-skill runner |
 | Build pacman package | `scripts/package/package_pacman.sh`, `packaging/pacman/PKGBUILD*` | dynamic pkgver/pkgrel rewrite + makepkg flow |
@@ -63,6 +64,9 @@ opencode-termux/
 ```bash
 # Runtime preparation (mainline local flow)
 ./tools/produce-local.sh 1.2.10
+
+# One-shot latest upstream release build + publish
+./tools/release-latest.sh
 
 # Build/package via make
 make all VER=1.2.10 PKG=both

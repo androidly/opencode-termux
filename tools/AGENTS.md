@@ -8,6 +8,7 @@
 |---|---|---|
 | Make wrapper UX | `make-opencode` | maps `--all/--batch/--pkg/--mix/...` into make vars |
 | Runtime source + wrapping | `produce-local.sh` | npm-first, GitHub fallback, loader wrapping, stale-dir cleanup |
+| Latest release orchestration | `release-latest.sh` | compare upstream/current release, package, selfcheck, publish assets |
 | Plugin install/update/rollback | `plugin-manager.sh` | snapshot-first mutation model + retry/backoff + state file |
 | Environment/plugin diagnostics | `plugin-selfcheck.sh` | read-only JSON checks for config/plugins/skills |
 | Upgrade/downgrade lifecycle tests | `upgrade-matrix.sh` | cached deb distribution + remote install/upgrade/downgrade simulation |
@@ -31,6 +32,9 @@
 
 # runtime preparation
 ./tools/produce-local.sh 1.2.10
+
+# release latest upstream package to GitHub Releases
+./tools/release-latest.sh
 
 # plugin lifecycle
 ./tools/plugin-manager.sh install
